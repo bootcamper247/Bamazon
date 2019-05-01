@@ -1,6 +1,7 @@
 //Dependencies
 var mysql = require("mysql");
 var inquirer = require("inquirer");
+var Table = require("cli-table3");
 
 
 var connection = mysql.createConnection({
@@ -9,19 +10,18 @@ var connection = mysql.createConnection({
     // Your port - from MYSQL workbench
     port: 8889,
 
-    // Your username
+    // Your username and password
     user: "root",
-
-    // Your password
     password: "root",
+
     database: "bamazon"
 });
 
 connection.connect(function (err) {
     if (err) throw err;
-    console.log("connected as id " + connection.threadId);
-
-    //first display  the ids, names, and prices of all of the items avail for sale. 
+    console.log("\nConnection Successful! Connected as id " + connection.threadId + "\n");
+    
+    //Display  the ids, names, and prices of all of the items avail for sale. 
     displayProducts();
 
 });
@@ -135,12 +135,23 @@ function updateProducts(arg_id, arg_qty) {
 }
 
 function displayProducts() {
+    
+    console.log("\nShowing all items available for sale.....\n")
     let command = "SELECT item_id, product_name, price FROM products";
     connection.query(command, function (err, res) {
         if (err) throw err;
         // logs the actual query being run
-        console.log(this.sql);
-        console.table(res);
+        //console.log(this.sql);
+
+        var prodTable = new Table({
+            head: ["ITEM ID", "PRODUCT NAME", "PRICE($)"],
+            colWidths: [10, 30, 12]
+        }); 
+        
+        for(var i = 0; i<res.length; i++){
+            prodTable.push([res[i]["item_id"], res[i]["product_name"], parseFloat(res[i]["price"]).toFixed(2)]);
+        }
+        console.log(prodTable.toString());
         start();
     });
 }
