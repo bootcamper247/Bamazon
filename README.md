@@ -25,6 +25,8 @@ However, if the store _does_ have enough of the product, the customer's order is
 
 ### #2: Manager View -- `bamazonManager.js`
 
+In the Manager View the manager can View the Current Inventory, Check Low Inventory Stock, Add Inventory Stock, or Add New Inventory.
+
 ![Image of View Products](https://github.com/bootcamper247/Bamazon/blob/master/images/ManagerView.png)
 ![Image of View Products](https://github.com/bootcamper247/Bamazon/blob/master/images/ManagerAdd.png)
 ![Image of View Products](https://github.com/bootcamper247/Bamazon/blob/master/images/ManagerAddNew.png)
