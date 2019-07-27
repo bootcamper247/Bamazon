@@ -1,5 +1,5 @@
 # Bamazon
-The app takes in orders from customers and depletes stock from the store's inventory
+Bamazon-CLI is a node command line interface that interacts with the Bamazon SQL Database. It allows the users to view and purchase items from the inventory. It allows Managers to edit and manage the products in the Bamazon database. 
 
 
 ### #1: Customer View -- `bamazonCustomer.js`
@@ -22,3 +22,10 @@ However, if the store _does_ have enough of the product, the customer's order is
 ![Image of View Products](https://github.com/bootcamper247/Bamazon/blob/master/images/CustomerBuy.png)
 ![Image of View Products](https://github.com/bootcamper247/Bamazon/blob/master/images/CustomerBuyShort.png)
 ![Image of View Products](https://github.com/bootcamper247/Bamazon/blob/master/images/CustomerRejectShort.png)
+
+### #2: Manager View -- `bamazonManager.js`
+
+![Image of View Products](https://github.com/bootcamper247/Bamazon/blob/master/images/ManagerView.png)
+![Image of View Products](https://github.com/bootcamper247/Bamazon/blob/master/images/ManagerAdd.png)
+![Image of View Products](https://github.com/bootcamper247/Bamazon/blob/master/images/ManagerAddNew.png)
+![Image of View Products](https://github.com/bootcamper247/Bamazon/blob/master/images/ManagerLow.png)
